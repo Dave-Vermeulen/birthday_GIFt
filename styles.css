@@ -5,7 +5,7 @@ body {
     color: #ffffff;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, p {
     text-shadow: 0 0 1px black;
 }
 
@@ -16,11 +16,18 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
-#bday-age, #bday-date {
+#bday-age {
     background: #EFB0C9;
     padding: 5px 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 5px 0 10px 0;
+}
+
+#bday-date {
+    margin: 0;
+    background: #EFB0C9;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 #header {
@@ -42,46 +49,48 @@ h1, h2, h3, h4 {
 }
 
 .gift-img {
+    position: relative;
     margin: 20px auto;
-    max-width: 400px;
+    width: 400px;
     height: 400px;
     border: 6px solid white;
     border-radius: 10px;
-    background-image: url("images/gift-cover.jpg");
+    background-image: url("images/gift-cover.jpg"); /* Default cover */
     background-size: cover;
-    position: relative;
-    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease; /* Smooth transition on hover */
 }
 
-.gift-img img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.gift-img:hover img {
-    opacity: 1;
-}
-
-/* Add specific IDs for custom hover behavior */
+/* Hover effects for each gift section */
 #gift-img-happy:hover {
-    background-image: none;
+    background-image: url("happy.gif"); /* Replaces with the happy gif */
 }
 
 #gift-img-hot:hover {
-    background-image: none;
+    background-image: url("im2_how-people-react.jpg"); /* Replaces with the image */
 }
 
 #gift-img-badass:hover {
-    background-image: none;
+    background-image: url("badass.gif"); /* Replaces with the badass gif */
 }
 
 #gift-img-cheers:hover {
-    background-image: none;
+    background-image: url("this_1_for.jpg"); /* Replaces with the cheers image */
 }
 
+/* Giphy iframe embed remains unchanged */
+.giphy-embed {
+    width: 100%;
+    height: 100%;
+}
+
+#footer {
+    font-style: italic;
+    width: 400px;
+    margin: 40px auto 20px;
+}
+
+a {
+    color: white;
+}
