@@ -5,7 +5,7 @@ body {
     color: #ffffff;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4 {
     text-shadow: 0 0 1px black;
 }
 
@@ -16,18 +16,11 @@ h1, h2, h3, h4, p {
     margin-bottom: 10px;
 }
 
-#bday-age {
+#bday-age, #bday-date {
     background: #EFB0C9;
     padding: 5px 10px;
     border-radius: 5px;
-    margin: 5px 0 10px 0;
-}
-
-#bday-date {
-    margin: 0;
-    background: #EFB0C9;
-    padding: 5px 10px;
-    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 #header {
@@ -49,48 +42,46 @@ h1, h2, h3, h4, p {
 }
 
 .gift-img {
-    position: relative;
     margin: 20px auto;
-    width: 400px;
+    max-width: 400px;
     height: 400px;
     border: 6px solid white;
     border-radius: 10px;
     background-image: url("images/gift-cover.jpg");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Hover effects for each gift section */
+.gift-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gift-img:hover img {
+    opacity: 1;
+}
+
+/* Add specific IDs for custom hover behavior */
 #gift-img-happy:hover {
-    background-image: url("happy.gif");
+    background-image: none;
 }
 
 #gift-img-hot:hover {
-    background-image: url("im2_how-people-react.jpg");
+    background-image: none;
 }
 
 #gift-img-badass:hover {
-    background-image: url("badass.gif");
+    background-image: none;
 }
 
 #gift-img-cheers:hover {
-    background-image: url("this_1_for.jpg");
+    background-image: none;
 }
 
-/* Embed the Giphy iframe properly */
-.giphy-embed {
-    width: 100%;
-    height: 100%;
-}
-
-#footer {
-    font-style: italic;
-    width: 400px;
-    margin: 40px auto 20px;
-}
-
-a {
-    color: white;
-}
